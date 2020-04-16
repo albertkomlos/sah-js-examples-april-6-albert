@@ -24,7 +24,7 @@ $('#first').remove();
 //akkor addolunk uj p taget ha meg nincs legalabb 5
 $('#add-button').click(() => {
     if($('main p').length < 5) {
-        $('main').append('<p>Added a new p tag</p>');
+        $('main').append(`<p>Username: ${$('#name').val()}</p>`);
     } else {
         $('main').append('<p class="green">Added a new p tag</p>');
     }
@@ -49,3 +49,30 @@ if (age === 18) {
 } else {
     console.log('This is a kid, no alcohol')
 }
+
+
+let colors = ['orange', 'yellow', 'purple', 'blue', 'green'];
+colors.push('magenta')
+
+// instead of doing this 5 times:
+// $('main').append('<div class="box"></div>');
+// $('main div:last-child').css('background', 'orange');
+// $('main').append('<div class="box"></div>');
+// $('main div:last-child').css('background', 'yellow');
+// $('main').append('<div class="box"></div>');
+// $('main div:last-child').css('background', 'purple');
+// $('main').append('<div class="box"></div>');
+// $('main div:last-child').css('background', 'blue');
+// $('main').append('<div class="box"></div>');
+// $('main div:last-child').css('background', 'green');
+
+colors.forEach((color) => {
+    $('main').append('<div class="box"></div>');
+    $('main div:last-child').css('background', color);
+});
+
+
+for(let i=0; i < 100;  i=i+1) {
+    console.log('Current number: ' + i);
+}
+
